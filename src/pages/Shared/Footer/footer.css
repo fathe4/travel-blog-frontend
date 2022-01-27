@@ -1,0 +1,13 @@
+.footer{
+    margin-top: 60px ;
+    padding: 80px 0;
+}
+
+.icons i {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.footer-nav .nav-link {
+    color: #ebebeb !important;
+}

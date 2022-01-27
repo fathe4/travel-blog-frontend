@@ -1,0 +1,12 @@
+select#mySelect {
+    border-radius: 5px;
+    border: 2px solid #656262;
+}
+
+.spinner{
+    
+        position: absolute;
+        left: 50%;
+        top: 30%;
+    
+}
