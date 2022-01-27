@@ -33,7 +33,7 @@ const UpdateBlogDetails = ({ details }) => {
 
         console.log(formData, title, image, description);
 
-        fetch(`http://localhost:5000/dashboard/blog/${id}`, {
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/dashboard/blog/${id}`, {
             method: 'PUT',
             body: formData
         })

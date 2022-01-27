@@ -10,7 +10,7 @@ const Approval = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/blogs`)
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/blogs`)
             .then(res => res.json())
             .then(data => {
                 const approvalBlogs = data.filter(blog => blog.approval === 'pending')
@@ -22,7 +22,7 @@ const Approval = () => {
     // APPROVE BLOG
     const approveBlog = (id) => {
         const approval = { approval: 'approved' }
-        fetch(`http://localhost:5000/dashboard/approval/${id}`, {
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/dashboard/approval/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -46,7 +46,7 @@ const Approval = () => {
     const deleteBlog = (id) => {
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`http://localhost:5000/dashboard/blog/${id}`, {
+            fetch(` https://hidden-wildwood-53007.herokuapp.com/dashboard/blog/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {
@@ -60,14 +60,14 @@ const Approval = () => {
                 })
                 .finally(() => setIsLoading(false))
         } else {
-            fetch(`http://localhost:5000/blogs`)
+            fetch(` https://hidden-wildwood-53007.herokuapp.com/blogs`)
                 .then(res => res.json())
                 .then(data => setBlogs(data))
         }
     }
     return (
         <div>
-            <h2>Manage All Blogs</h2>
+            <h2>Approve Blogs</h2>
             {
                 blogs ? <Table responsive striped bordered hover size="sm">
                     <thead>

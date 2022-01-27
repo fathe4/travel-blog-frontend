@@ -9,7 +9,7 @@ const MakeAdmin = () => {
         e.preventDefault()
         const email = emailRef.current.value
         const userEmail = { email }
-        fetch('http://localhost:5000/dashboard/makeAdmin', {
+        fetch(' https://hidden-wildwood-53007.herokuapp.com/dashboard/makeAdmin', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(userEmail)

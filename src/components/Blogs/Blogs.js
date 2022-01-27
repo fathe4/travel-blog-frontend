@@ -13,7 +13,7 @@ const Blogs = ({ blogs, isLoading }) => {
     // const size = 1;
     // useEffect(() => {
     //     setIsLoading(true)
-    //     fetch(`http://localhost:5000/blogs`)
+    //     fetch(` https://hidden-wildwood-53007.herokuapp.com/blogs`)
     //         .then(res => res.json())
     //         .then(data => {
     //             const approvedBlogs = data.filter(blogs => blogs.approval === 'approved')

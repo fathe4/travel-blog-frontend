@@ -1,6 +1,5 @@
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider, sendEmailVerification } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import FirebaseInitialization from "../Firebase/firebase.init";
 
 
@@ -21,7 +20,7 @@ const UseFirebase = () => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-
+                sendEmailVerification(auth.currentUser)
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 console.log('new register done');
@@ -45,7 +44,7 @@ const UseFirebase = () => {
     // CHECK ADMIN 
     useEffect(() => {
         // fetch(`https://polar-savannah-40370.herokuapp.com/users/admin@admin.com`)
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => { setAdmin(data.admin) })
 
@@ -85,7 +84,7 @@ const UseFirebase = () => {
     }
 
     const checkUser = (email) => {
-        fetch(`http://localhost:5000/users/${email}`)
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/users/${email}`)
             .then(res => res.json())
             .then(data => { setAdmin(data.admin) })
     }
@@ -121,7 +120,7 @@ const UseFirebase = () => {
 
         const user = { name, email, roll: 'user' }
 
-        fetch('http://localhost:5000/addUser', {
+        fetch(' https://hidden-wildwood-53007.herokuapp.com/addUser', {
             method: method,
             headers: {
                 'content-type': 'application/json'

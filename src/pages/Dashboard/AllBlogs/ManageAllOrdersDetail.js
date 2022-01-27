@@ -18,7 +18,7 @@ const ManageAllORdersDetail = () => {
     // Fetch orders
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/dashboard/orders/${id}`)
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/dashboard/orders/${id}`)
             .then(res => res.json())
             .then(data => setUserOrders(data))
             .finally(() => setLoading(false))
@@ -63,7 +63,7 @@ const ManageAllORdersDetail = () => {
     // UPDATE ORDER STATUS
     const updateStatus = (id, status) => {
         const updateStatus = { status: status }
-        fetch(`http://localhost:5000/dashboard/orders/${id}`, {
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/dashboard/orders/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -73,7 +73,7 @@ const ManageAllORdersDetail = () => {
             .then(data => {
                 if (data.modifiedCount) {
                     setLoading(true)
-                    fetch(`http://localhost:5000/dashboard/orders/${id}`)
+                    fetch(` https://hidden-wildwood-53007.herokuapp.com/dashboard/orders/${id}`)
                         .then(res => res.json())
                         .then(data => setUserOrders(data))
                         .finally(() => setLoading(false))

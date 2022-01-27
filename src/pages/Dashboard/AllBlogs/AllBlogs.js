@@ -12,7 +12,7 @@ const AllBlogs = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/blogs`)
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/blogs`)
             .then(res => res.json())
             .then(data => setBlogs(data))
             .finally(() => setIsLoading(false))
@@ -26,7 +26,7 @@ const AllBlogs = () => {
     const deleteOrder = (id) => {
         if (window.confirm('Are you sure you want to delete?')) {
             setIsLoading(true)
-            fetch(`http://localhost:5000/dashboard/blog/${id}`, {
+            fetch(` https://hidden-wildwood-53007.herokuapp.com/dashboard/blog/${id}`, {
                 method: 'DELETE'
             }).then(res => res.json())
                 .then(data => {
@@ -40,7 +40,7 @@ const AllBlogs = () => {
                 })
                 .finally(() => setIsLoading(false))
         } else {
-            fetch(`http://localhost:5000/blogs`)
+            fetch(` https://hidden-wildwood-53007.herokuapp.com/blogs`)
                 .then(res => res.json())
                 .then(data => setBlogs(data))
         }

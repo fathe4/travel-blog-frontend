@@ -9,7 +9,7 @@ const SingleBlog = () => {
     console.log(id);
     useEffect(() => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/dashboard/blog?id=${id}`)
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/dashboard/blog?id=${id}`)
             .then(res => res.json())
             .then(data => setBlog(data))
             .finally(() => setIsLoading(false))

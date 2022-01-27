@@ -8,7 +8,7 @@ const Sidebar = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/blogs`)
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/blogs`)
             .then(res => res.json())
             .then(data => {
                 const approvedBlogs = data.filter((blogs) => parseInt(blogs.ratings)).sort((a, b) => b - a)

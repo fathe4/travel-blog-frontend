@@ -26,7 +26,7 @@ const AddBlog = () => {
     // }
     console.log('ratings', ratings);
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(` https://hidden-wildwood-53007.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setIsAdmin(data.admin))
     }, [user.email])
@@ -56,7 +56,7 @@ const AddBlog = () => {
 
         console.log(formData, title, image, description);
 
-        fetch('http://localhost:5000/dashboard/addBlog', {
+        fetch(' https://hidden-wildwood-53007.herokuapp.com/dashboard/addBlog', {
             method: 'post',
             body: formData
         })
