@@ -9,3 +9,4 @@ The features are
 5. user can update his post
 6. Admin can delete update post
 7. Admin can make another admin
+8. After registration an email verification mail will be send

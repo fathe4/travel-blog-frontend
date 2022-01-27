@@ -20,13 +20,13 @@ const UseFirebase = () => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                sendEmailVerification(auth.currentUser)
+
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 console.log('new register done');
                 addUserToDB(email, name, 'POST')
                 setError('')
-
+                verifyEmail()
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
@@ -39,6 +39,10 @@ const UseFirebase = () => {
                 const errorMessage = error.message;
                 setError(errorMessage)
             }).finally(() => setIsLoading(false));
+    }
+    const verifyEmail = () => {
+        sendEmailVerification(auth.currentUser)
+            .then(res => { console.log(res) })
     }
 
     // CHECK ADMIN 
