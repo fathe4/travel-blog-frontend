@@ -104,7 +104,7 @@ const UpdateBlogDetails = ({ details }) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Thumbnail</Form.Label> <br />
-                <input accept="image/*" type="file" onChange={(e) => setImage(e.target.files[0])} name='url' />
+                <input type="url" className="form-control" defaultValue={details.url} onChange={(e) => setImage(e.target.value)} name='url' placeholder='Image url' />
                 {/* <Form.Control onBlur={handleOnBlur} name='url' type="url" placeholder="Product Image Url" /> */}
             </Form.Group>
 

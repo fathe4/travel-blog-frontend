@@ -145,7 +145,8 @@ const UseFirebase = () => {
         user,
         error,
         admin,
-        signInWithGoogle
+        signInWithGoogle,
+        verifyEmail
 
 
     }

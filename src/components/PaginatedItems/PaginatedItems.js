@@ -15,18 +15,20 @@ const PaginatedItems = ({ itemsPerPage }) => {
     const [isLoading, setIsLoading] = useState(false)
 
 
-    const size = 1;
     useEffect(() => {
         setIsLoading(true)
         fetch(` https://hidden-wildwood-53007.herokuapp.com/blogs`)
             .then(res => res.json())
             .then(data => {
-                const approvedBlogs = data.filter(blogs => blogs.approval === 'approved')
+                console.log(data, 'blogs');
+                const approvedBlogs = data.filter(blogs => blogs.approval === 'Approved')
                 setBlogs(approvedBlogs)
 
             })
             .finally(() => setIsLoading(false))
     }, [])
+
+
 
     useEffect(() => {
         // Fetch items from another resources.

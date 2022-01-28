@@ -76,7 +76,7 @@ const MyBlogs = () => {
                             <span className="visually-hidden">Loading...</span>
                         </Spinner> </div> :
                             blogs?.map(blog => <> <tr>
-                                <td><img src={`data:image/jpeg;base64,${blog.url}`} width={50} alt="" /></td>
+                                <td><img src={blog.url} width={50} alt="" /></td>
                                 <td>{blog?.title}</td>
                                 <td>{blog?.category}</td>
                                 <td>{blog?.location}</td>

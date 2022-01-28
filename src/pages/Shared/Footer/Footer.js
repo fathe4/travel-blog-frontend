@@ -12,7 +12,7 @@ const Footer = () => {
                     {/* Footer 1 */}
                     <Col>
                         <Navbar.Brand as={Link} to="/home">
-                            <h2 className='text-white'>Super <i className='primary-color'>Bicycles</i></h2>
+                            <h2 className='text-white fw-bolder'>Travelogue <i class="fas fa-plane-departure text-white"></i></h2>
 
 
                         </Navbar.Brand>
@@ -28,7 +28,7 @@ const Footer = () => {
                                 <NavLink className="nav-link" to="/Home">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/bicycles">Bicycles</NavLink>
+                                <NavLink className="nav-link" to="/dashboard/addBlog">Add your own experience</NavLink>
                             </li>
 
 

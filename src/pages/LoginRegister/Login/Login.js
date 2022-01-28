@@ -6,7 +6,7 @@ import UseAuth from '../../../hooks/UseAuth';
 
 const Login = () => {
     const [newUser, setNewUser] = useState({})
-    const { signIn, signInWithGoogle } = UseAuth()
+    const { signIn, signInWithGoogle, error } = UseAuth()
     const location = useLocation()
     const navigate = useNavigate();
 
@@ -46,6 +46,7 @@ const Login = () => {
                         Submit
                     </Button>
                 </Form>
+                <p>{error ? error : ''}</p>
                 <p className='text-center'>----------OR-----------</p>
                 <Button className="mt-2 w-100" variant="dark" onClick={() => handleGoogleSignIn()}>
                     Google Login

@@ -1,0 +1,7 @@
+
+
+@media screen and (max-width: 1900px) and (min-width: 920px) {
+    .carousel-caption.d-flex.flex-column.justify-content-center.h-100.carousel-caption h1 {
+        font-size: 66px !important;
+    }
+  }

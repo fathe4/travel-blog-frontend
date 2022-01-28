@@ -26,7 +26,7 @@ const SingleBlog = () => {
                 blog?.map(details =>
                     <div className='container d-flex justify-content-center flex-column'>
                         <div className='mx-auto mt-3'>
-                            <img src={`data:image/jpeg;base64,${details.url}`} alt="" className='w-100 shadow rounded' />
+                            <img src={details.url} alt="" className='w-100 shadow rounded' />
                         </div>
                         <Table striped bordered hover className='mt-5'>
                             <thead>
@@ -43,7 +43,7 @@ const SingleBlog = () => {
                                     <td>{details.date}</td>
                                     <td>{details.time}</td>
                                     <td>{details.location}</td>
-                                    <td>{details.expense}</td>
+                                    <td>{details.expense} USD</td>
                                     <td>{details.ratings} <i class="fas fa-star"></i></td>
                                 </tr>
 

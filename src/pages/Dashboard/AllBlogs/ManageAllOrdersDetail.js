@@ -110,7 +110,7 @@ const ManageAllORdersDetail = () => {
                                             if (key !== "_id" && key !== 'details' && key !== 'billing' && key !== 'status') {
                                                 return (
                                                     <tr>
-                                                        <td><img src={`data:image/jpeg;base64,${url}`} width={40} alt="" /></td>
+                                                        <td><img src={url} width={40} alt="" /></td>
                                                         <td>{title}</td>
                                                         <td>{price}</td>
                                                         <td>{cartQuantity}</td>

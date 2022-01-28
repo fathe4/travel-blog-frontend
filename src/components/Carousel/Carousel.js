@@ -7,37 +7,44 @@ const HomeCarousel = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=1260"
-                    height={700}
+                    src="https://i.ibb.co/TTBfT27/Untitled-design-22.png"
                     alt="First slide"
                 />
-                <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <Carousel.Caption className="carousel-caption d-flex flex-column justify-content-center h-100" style={{ top: "0" }}>
+                    <h1>“Travel makes one modest. You see what a tiny place you occupy in the world.”</h1>
+                    <p>― Gustave Flaubert</p>
+                    <div>
+                        <button className='btn btn-light mt-3'>Add Your own experience</button>
+                    </div>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="https://timelinecovers.pro/facebook-cover/download/travel-the-world-facebook-cover.jpg"
+                    src="https://i.ibb.co/Yf10gPh/Untitled-design-23.png"
                     alt="Second slide"
                 />
 
-                <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <Carousel.Caption className="carousel-caption d-flex flex-column justify-content-center h-100" style={{ top: "0" }}>
+                    <h1>“Travel is the only thing you buy that makes you richer”</h1>
+                    <div>
+                        <button className='btn btn-light mt-3'>Add Your own experience</button>
+                    </div>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="https://timelinecovers.pro/facebook-cover/download/travel-the-world-facebook-cover.jpg"
+                    src="https://i.ibb.co/C9qDBQs/Untitled-design-24.png"
                     alt="Third slide"
                 />
 
-                <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <Carousel.Caption className="carousel-caption d-flex flex-column justify-content-center h-100" style={{ top: "0" }}>
+                    <h1>"It feels good to be lost in the right direction”</h1>
+                    <p>-Unknown</p>
+                    <div>
+                        <button className='btn btn-light mt-3'>Add Your own experience</button>
+                    </div>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

@@ -14,7 +14,7 @@ const AddBlog = () => {
     const [image, setImage] = useState('')
     const [isAdmin, setIsAdmin] = useState('')
     // const formData = new FormData()
-    const { user } = UseAuth()
+    const { user, verifyEmail } = UseAuth()
     let approval = 'pending'
     // const handleOnBlur = (e) => {
     //     const field = e.target.name
@@ -24,6 +24,11 @@ const AddBlog = () => {
     //     setRatings(newRatings)
 
     // }
+    const emailVerify = () => {
+        verifyEmail()
+    }
+
+
     console.log('ratings', ratings);
     useEffect(() => {
         fetch(` https://hidden-wildwood-53007.herokuapp.com/users/${user.email}`)
@@ -40,6 +45,8 @@ const AddBlog = () => {
         if (isAdmin) {
             approval = 'Approved'
         }
+        const dateObj = new Date().toLocaleDateString()
+
         const formData = new FormData();
         formData.append('title', title);
         formData.append('expense', expense)
@@ -50,14 +57,16 @@ const AddBlog = () => {
         formData.append('location', location)
         formData.append('description', description)
         formData.append('url', image)
+        formData.append('postedOn', dateObj)
         formData.append('admin', isAdmin)
+        formData.append('name', user.displayName)
         formData.append('email', user.email)
         formData.append('approval', approval)
 
         console.log(formData, title, image, description);
 
         fetch(' https://hidden-wildwood-53007.herokuapp.com/dashboard/addBlog', {
-            method: 'post',
+            method: 'POST',
             body: formData
         })
             .then(response => response.json())
@@ -131,7 +140,7 @@ const AddBlog = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Thumbnail</Form.Label> <br />
-                    <input accept="image/*" type="file" onChange={(e) => setImage(e.target.files[0])} name='url' />
+                    <input type="url" className="form-control" onChange={(e) => setImage(e.target.value)} name='url' placeholder='Image url' />
                     {/* <Form.Control onBlur={handleOnBlur} name='url' type="url" placeholder="Product Image Url" /> */}
                 </Form.Group>
 
@@ -139,6 +148,7 @@ const AddBlog = () => {
                     Submit
                 </Button>
             </Form>
+            {user.emailVerified ? '' : <p className='text-center mt-5'>Please verify your email. Didn't get the verify mail yet? <button className='btn btn-sm' onClick={() => emailVerify()}>Click here</button></p>}
         </div>
     );
 };
